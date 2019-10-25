@@ -9,7 +9,9 @@
       </div>
       <div class="navbar-right">
         <ul>
-          <li class="menu"><a href="#">菜单</a> </li>
+          <li class="menu">
+            <a href="#">菜单</a>
+          </li>
           <li
             v-for="(item,index) in linkList"
             :key="index"
@@ -78,6 +80,11 @@ li {
   list-style: none;
   display: inline-block;
 }
+.cnki-header {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0 50px 0;
+}
 .cnki-header .navbar {
   height: 80px;
   display: flex;
@@ -99,7 +106,7 @@ li {
 }
 
 .cnki-header .navbar-right li:first-child {
-    display: none;
+  display: none;
 }
 /* .cnki-header .navbar-right li:last-child {
   margin-right: 100px;
@@ -115,6 +122,7 @@ li {
   color: #000;
   font-size: 1em;
   text-transform: uppercase;
+  font-size: 17px;
   font-weight: 300;
 }
 
@@ -124,16 +132,15 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-  .menu{
-        background: url(../assets/img/menu.png) no-repeat 10px 7px;
-
+  .menu {
+    background: url(../assets/img/menu.png) no-repeat 10px 7px;
   }
   .cnki-header .navbar-right {
   }
 
   .cnki-header .navbar-right ul {
     width: 100px;
-    padding: 0px 0;
+    padding: 0 0;
     position: absolute;
     top: 0;
     right: 0;
@@ -144,7 +151,7 @@ li {
     opacity: 0.9;
   }
   .cnki-header .navbar-right li {
-    display: none; 
+    display: none;
     padding: 0;
   }
   .cnki-header .navbar-right li:first-child {
@@ -155,11 +162,10 @@ li {
     width: 80px;
     display: block;
     padding-left: 32px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
     text-align: left;
-    line-height:100%;
+    line-height: 100%;
   }
-  -
   .cnki-header .navbar-right ul:hover {
     background: none;
   }
@@ -177,7 +183,5 @@ li {
   .link-active {
     background: url(../assets/img/check.png) no-repeat 10px 7px;
   }
-  
 }
-
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="cnki-footer">
-    <div class="container">
+    <div class="cnki-footer-content">
       <div class="row">
         <div class="col-sm-12 text-center bottom-separator">
           <img src="../assets/img/under.png" class="img-responsive inline" alt />
@@ -96,6 +96,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.cnki-footer{
+
+}
+.cnki-footer-content{
+  width:80%;
+  margin: auto;
+}
 .img-responsive {
   display: block;
   width: 100%;

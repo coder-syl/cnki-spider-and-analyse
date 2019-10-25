@@ -27,8 +27,8 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 50%;
-  margin-left: 20%;
+  /* width: 50%; */
+  /* margin-left: 20%; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -38,13 +38,13 @@ a {
 }
 /* 大型设备（大台式电脑，1200px 起） */
 /* @media screen and (min-width: 1200px) {
-  
+
 } */
 /* 中型设备（台式电脑，992px 起） */
 @media screen and (min-width: 992px) {
   .app {
-    width: 65%;
-    margin-left: 20%;
+    width: 100%;
+    /* margin-left: 20%; */
   }
 }
 /* 小型设备（平板电脑，768px 起） */
