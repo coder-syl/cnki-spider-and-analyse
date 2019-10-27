@@ -23,6 +23,10 @@ export default {
 };
 </script>
  <style>
+ *{
+   margin:0;
+   padding: 0;
+ }
 .app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,6 +40,9 @@ export default {
 a {
   text-decoration: none;
 }
+/* .container {
+  height: 600px;
+} */
 /* 大型设备（大台式电脑，1200px 起） */
 /* @media screen and (min-width: 1200px) {
 

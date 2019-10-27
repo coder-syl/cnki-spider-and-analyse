@@ -1,34 +1,24 @@
 <template>
-  <div class="cnki-footer">
-    <div class="cnki-footer-content">
-      <div class="row">
-        <div class="col-sm-12 text-center bottom-separator">
-          <img src="../assets/img/under.png" class="img-responsive inline" alt />
-        </div>
-        <div class="contact" style="padding-left: 10%">
-          <div class="contact-info bottom">
+  <div class="footer">
+    <div class="footer-container">
+      <!-- <div class="footer-content">
+        <img src="../assets/img/under.png" alt />
+      </div>-->
+      <!-- < class="footer-content"> -->
+          <div class="footer-content-phone">
             <h2>联系方式</h2>
-            <address>
-              E-mail:
+            <p>
+              Email
               <a href="mailto:someone@example.com">2522011411@qq.com</a>
-              <br />Phone: 18796323596
-              <br />QQ: 2522011411
-              <br />
-            </address>
-
-            <h2>地址</h2>
-            <address>
-              江苏省徐州市
-              <br />**************
-              <br />**************
-            </address>
+            </p>
+            <p>Phone: 18796323596</p>
+            <p>QQ: 2522011411</p>
+            <h2 class="address">地址</h2>
+            <p>江苏省徐州市泉山区江苏师范大学</p>
           </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="contact-form bottom">
+          <div class="footer-content-online">
             <h2>在线联系</h2>
             <form id="main-contact-form" name="contact-form" method="get">
-              {% csrf_token %}
               <div class="form-group">
                 <input
                   type="text"
@@ -68,19 +58,20 @@
               </div>
             </form>
           </div>
-        </div>
-        <div class="col-sm-12">
-          <div class="copyright-text text-center">
-            <p>&copy; 知网大数据 2019. All Rights Reserved.</p>
-            <p>
-              Designed by
-              <a target="_blank" href="http://sylblog.xin">尚衍亮</a>
-            </p>
-          </div>
-        </div>
-      </div>
+
+      <!-- </div> -->
+
     </div>
   </div>
+   <!-- <div class="footer-content">
+        <div class="footer-content-copyright">
+          <p>&copy; 知网大数据 2019. All Rights Reserved.</p>
+          <p>
+            Designed by
+            <a target="_blank" href="http://sylblog.xin">尚衍亮</a>
+          </p>
+        </div>
+      </div> -->
 </template>
 
 <script>
@@ -96,20 +87,89 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.cnki-footer{
-
+.footer {
+  /* background: url(../assets/img/footer.png) 0 100% repeat-x; */
 }
-.cnki-footer-content{
-  width:80%;
+.footer-container {
+ width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: auto;
+  /* height: 690px; */
 }
-.img-responsive {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+.footer-content-phone{
+ flex: 1;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 
-.inline {
-  display: inline-block;
 }
+.footer-content-online{
+   flex: 1;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+/* .footer-content {
+   flex: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+    margin: auto;
+
+} */
+/* .footer-content img { */
+  /* display: block; */
+  /* width: 100%; */
+  /* height: auto; */
+/* } */
+/* .footer-content-contact { */
+  /* display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: center; */
+  /* align-items: center; */
+/* }
+.footer-content-phone {
+  flex: 1;
+}
+.footer-content-online {
+  flex: 1;
+}
+.footer-content-phone h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #686868;
+  font-weight: 300;
+} */
+/* .footer-content-phone p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgb(43, 43, 43);
+}
+.footer-content-phone p a {
+  text-decoration: none;
+  color: #c03035;
+  font-style: normal;
+}
+.footer-content-phone .address {
+  padding-top: 20px;
+}
+.footer-content-copyright {
+  text-align: center;
+  margin-top: 70px;
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+.footer-content-copyright a {
+  color: #3e848a;
+} */
 </style>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/layouts/home'
+import index from '@/layouts/index'
 import hotAnalyse from '@/layouts/hotAnalyse'
 import onlineSpider from '@/layouts/onlineSpider'
 import chartAnalyse from '@/layouts/chartAnalyse'
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: home
+      name: 'index',
+      component: index
     },
     {
       path: '/hotAnalyse',

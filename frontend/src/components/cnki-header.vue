@@ -139,11 +139,11 @@ li {
   }
 
   .cnki-header .navbar-right ul {
-    width: 100px;
+    width: 120px;
     padding: 0 0;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    right: 15px;
     border: solid 1px #aaa;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
