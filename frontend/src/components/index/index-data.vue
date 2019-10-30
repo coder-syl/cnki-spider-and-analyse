@@ -3,7 +3,7 @@
     <div class="data-container">
       <div class="data-content" v-for="item in content" :key="item.title">
         <div class="data-content-title">
-          <h1>{{item.title}}</h1>
+          <h1 data-to="7000" data-speed="3000" data-from="0">{{item.title}}</h1>
         </div>
         <div class="data-content-dec">
           <h3>{{ item.dec}}</h3>

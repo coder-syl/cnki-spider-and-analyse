@@ -48,7 +48,7 @@ export default {
 </script>>
 <style lang="css" scoped>
 .feature {
-  padding-bottom:30px;
+  padding-bottom: 30px;
 }
 .feature-container {
   width: 70%;
@@ -91,7 +91,8 @@ export default {
   justify-content: center;
 }
 .feature-right img {
-  width: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 768px) {

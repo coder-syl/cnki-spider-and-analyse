@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <div class="slider-container">
-      <div class="slider-left">
+      <div class="slider-left animated fadeInLeftBig">
         <div class="slider-left-title">
           <h1>知网大数据</h1>
         </div>
@@ -12,7 +12,7 @@
           <button>欢迎使用</button>
         </div>
       </div>
-      <div class="slider-right">
+      <div class="slider-right animated bounceInDown">
         <img class src="../../assets/img/analyse.png" alt />
       </div>
     </div>
@@ -24,6 +24,7 @@ export default {
 };
 </script>>
 <style lang="css" scoped>
+/* @import url(../../assets/css/animate.css); */
 .slider {
   background: url(../../assets/img/sliderBg.png) 0 100% repeat-x;
 }
@@ -70,7 +71,7 @@ export default {
 }
 .slider-right img {
   margin: 0px;
-  animation: bounceDown ease-in-out 200ms both；;
+  /* animation: bounceDown ease-in-out 200ms both；; */
 }
 @keyframes bounceDown {
   0% {

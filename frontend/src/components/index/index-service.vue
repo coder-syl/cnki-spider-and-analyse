@@ -2,7 +2,7 @@
   <div class="service">
     <div class="service-container">
       <div class="service-content" v-for="item in content" :key="item.title">
-        <div class="service-content-img">
+        <div class="service-content-img animated fadeIn"  style="animation-delay: 1s;animation-uration:1s;">
           <img :src="item.imgSrc" alt />
         </div>
         <div class="service-content-title">

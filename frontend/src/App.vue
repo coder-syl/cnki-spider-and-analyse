@@ -22,7 +22,8 @@ export default {
   }
 };
 </script>
- <style>
+ <style lang="css">
+ @import url(./assets/css/animate.css);
  *{
    margin:0;
    padding: 0;
