@@ -19,7 +19,7 @@ export default {
     indexData,
     indexFeature
   },
-  name: "index",
+
   data() {
     return {
       msg: "这是首页"

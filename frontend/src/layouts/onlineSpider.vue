@@ -2,10 +2,11 @@
   <div class="onlineSpider">
     <div class="onlineSpider-container">
       <div class="start">
-        <input type="texx" required/>
-        <button @click="startSpider">启动爬虫</button>
+        <input type="text" v-model="keyWord" required="required" />
+        <el-button type="primary" @click="startSpider" :disabled="startDisabled">启动爬虫</el-button>
+        <button @click="closeSpider">关闭爬虫</button>
       </div>
-      <div class="steps">
+      <div class="steps" v-show="stepsShow">
         <div>
           <button class="steps-button">使用步骤</button>
         </div>
@@ -40,6 +41,25 @@
           </div>
         </div>
       </div>
+      <div class="steps" v-show="!stepsShow">
+        <el-table :data="tableData" style="width: 100%" max-height="500">
+          <el-table-column fixed prop="name" label="文章" width="350"></el-table-column>
+          <el-table-column prop="author" label="作者" width="120"></el-table-column>
+          <el-table-column prop="content" label="简介" width="200" show-overflow-tooltip></el-table-column>
+          <el-table-column prop="source" label="来源" width="180"></el-table-column>
+          <el-table-column prop="datetime" label="发表时间" width="150"></el-table-column>
+          <el-table-column prop="download" label="下载数量" width="120"></el-table-column>
+          <el-table-column fixed="cite" label="操作" width="120">
+            <template slot-scope="scope">
+              <el-button
+                @click.native.prevent="deleteRow(scope.$index, tableData)"
+                type="text"
+                size="small"
+              >移除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
     </div>
   </div>
 </template>
@@ -49,12 +69,74 @@ export default {
   name: "onlineSpider",
   data() {
     return {
-      msg: "在线爬虫"
+      msg: "在线爬虫",
+      keyWord: "",
+      stepsShow: true,
+      tableData: [],
+      chatSocket: undefined,
+      startDisabled: false
     };
   },
+  name: "index",
+  watch: {
+    tableData(val) {
+      console.log("变化啦");
+      console.log(val);
+    }
+  },
+  created() {
+    this.chatSocket = new WebSocket("ws://" + "127.0.0.1:8000" + "/ws/chat/");
+    window.onbeforeunload = function() {
+      // 可以在这里写刷新之前的时间
+
+      return "";
+    };
+  },
+  destroyed() {
+    window.removeEventListener("beforeunload", () => {});
+  },
   methods: {
+    closeSpider() {
+      console.log("关闭爬虫");
+      this.chatSocket.send("close");
+      // this.chatSocket.close();
+    },
     startSpider() {
-      console.log("start spider");
+      this.$message({
+        message: "成功连接到数据抓取服务器",
+        type: "success"
+      });
+      this.startDisabled = true;
+      this.tableData = [];
+
+      this.stepsShow = false;
+      //创建socket连接
+
+      // this.chatSocket.onopen = () =>
+      this.chatSocket.send(JSON.stringify({ message: "getData" }));
+      // chatSocket.send();
+
+      // 后端使用send()方法发送的数据，由onmessage接收，并进行处理或展示
+      this.chatSocket.onmessage = e => {
+        console.log("收到消息");
+        if (e.data === "202") {
+          this.$message({
+            message: "开始获取数据",
+            type: "success"
+          });
+        }
+        // console.log(e);
+        else {
+          let data = JSON.parse(e.data);
+          this.tableData.unshift(data.paperInfo[0]);
+        }
+      };
+      this.chatSocket.onclose = e => {
+        this.$message({
+          message: "断开与数据抓取服务器的连接" + e,
+          type: "error"
+        });
+      };
     }
   }
 };
@@ -78,12 +160,12 @@ input {
   border: 1px solid #dcdfe6;
   border-radius: 4px;
   margin-right: 20px;
-padding: 0 15px;
-  font-size:20px;
+  padding: 0 15px;
+  font-size: 20px;
   font-weight: 300;
 }
-input:focus{
-border-color:none;
+input:focus {
+  border-color: none;
 }
 button {
   display: inline-block;
@@ -181,8 +263,8 @@ button {
 .right-content p {
   font-weight: 350;
   font-size: 16px;
-    line-height: 22px;
-    color:#0e0d0d;
+  line-height: 22px;
+  color: #0e0d0d;
 }
 .right-content {
   width: 60%;
