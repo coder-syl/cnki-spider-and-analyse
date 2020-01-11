@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9eee1946-ae41-4669-8264-205dc8a3baaf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cnki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cnki.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnki/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnki/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnki/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnki/consumer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnki/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnki/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/layouts/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnki/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnki/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/layouts/onlineSpider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/layouts/onlineSpider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider/mian.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider/mian.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +35,20 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cnki" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spider" />
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend/src/layouts" />
       <recent name="$PROJECT_DIR$/frontend/src/router" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cnki" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -58,7 +63,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.celery">
+    <configuration name="celery" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cnki" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cnki" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnki/celery.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="mian" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cnki" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.celery" />
         <item itemvalue="Python.mian" />
       </list>
     </recent_temporary>
@@ -103,7 +131,8 @@
       <workItem from="1576294507853" duration="12049000" />
       <workItem from="1576767678581" duration="1755000" />
       <workItem from="1576912162055" duration="5191000" />
-      <workItem from="1577504659833" duration="8070000" />
+      <workItem from="1577504659833" duration="10692000" />
+      <workItem from="1578721410320" duration="6917000" />
     </task>
     <servers />
   </component>
@@ -124,6 +153,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cnki$celery.coverage" NAME="celery Coverage Results" MODIFIED="1578708662100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cnki" />
     <SUITE FILE_PATH="coverage/cnki$mian.coverage" NAME="mian Coverage Results" MODIFIED="1576307668196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
   </component>
 </project>

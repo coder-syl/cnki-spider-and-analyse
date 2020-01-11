@@ -98,7 +98,10 @@ export default {
   methods: {
     closeSpider() {
       console.log("关闭爬虫");
-      this.chatSocket.send("close");
+      // this.chatSocket.send("close");
+      if (this.chatSocket.readyState === WebSocket.OPEN) {
+        this.chatSocket.close();
+      }
       // this.chatSocket.close();
     },
     startSpider() {

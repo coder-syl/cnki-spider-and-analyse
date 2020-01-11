@@ -5,21 +5,24 @@ from selenium.webdriver.common.by import By
 import time
 import json
 import csv
+from celery import task
 
 
-# 设置谷歌驱动器的环境
-options = webdriver.ChromeOptions()
-# 设置chrome不加载图片，提高速度
-options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2})
-# 创建一个谷歌驱动器
-browser =  webdriver.Chrome('/Applications/chromedriver',chrome_options=options)
-url = 'http://wap.cnki.net/touch/web/guide'
-
-# 声明一个全局列表，用来存储字典
-data_list = []
 
 
+@task
 def start_spider(page):
+    print("爬虫启动")
+    # 设置谷歌驱动器的环境
+    options = webdriver.ChromeOptions()
+    # 设置chrome不加载图片，提高速度
+    options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2})
+    # 创建一个谷歌驱动器
+    browser = webdriver.Chrome('/Applications/chromedriver', chrome_options=options)
+    url = 'http://wap.cnki.net/touch/web/guide'
+
+    # 声明一个全局列表，用来存储字典
+    data_list = []
     # 请求url
     browser.get(url)
     # 显示等待输入框是否加载完成
@@ -117,29 +120,29 @@ def start_spider(page):
         time.sleep(2)
 
 
-def main():
-
-    start_spider(eval(input('请输入要爬取的页数（如果需要全部爬取请输入0）：')))
-
-    # 将数据写入json文件中
-    # with open('data_json.json', 'a+', encoding='utf-8') as f:
-    #     json.dump(data_list, f, ensure_ascii=False, indent=4)
-    # print('json文件写入完成')
-    #
-    # # 将数据写入csv文件
-    # with open('data_csv.csv', 'w', encoding='utf-8', newline='') as f:
-    #     # 表头
-    #     title = data_list[0].keys()
-    #     # 声明writer对象
-    #     writer = csv.DictWriter(f, title)
-    #     # 写入表头
-    #     writer.writeheader()
-    #     # 批量写入数据
-    #     writer.writerows(data_list)
-    # print('csv文件写入完成')
-
-
-if __name__ == '__main__':
-
-    main()
+# def main():
+#
+#     start_spider(eval(input('请输入要爬取的页数（如果需要全部爬取请输入0）：')))
+#
+#     # 将数据写入json文件中
+#     # with open('data_json.json', 'a+', encoding='utf-8') as f:
+#     #     json.dump(data_list, f, ensure_ascii=False, indent=4)
+#     # print('json文件写入完成')
+#     #
+#     # # 将数据写入csv文件
+#     # with open('data_csv.csv', 'w', encoding='utf-8', newline='') as f:
+#     #     # 表头
+#     #     title = data_list[0].keys()
+#     #     # 声明writer对象
+#     #     writer = csv.DictWriter(f, title)
+#     #     # 写入表头
+#     #     writer.writeheader()
+#     #     # 批量写入数据
+#     #     writer.writerows(data_list)
+#     # print('csv文件写入完成')
+#
+#
+# if __name__ == '__main__':
+#
+#     main()
 
